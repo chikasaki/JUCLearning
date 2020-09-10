@@ -10,11 +10,11 @@
     - 统一管理线程(以线程池为媒介批量对线程进行操作)
     
 3. 线程池的一些参数:
-    ![parameters](../second/parameters.png)
+    ![parameters](../images/parameters.png)
     - corePoolSize与maxPoolSize
         - corePoolSize: 核心线程数，workQueue未满时的最大线程数
         - maxPoolSize: 最大线程数，workQueue满了之后的最大线程数
-        ![coreAndMax](../second/processChart.png)
+        ![coreAndMax](../images/processChart.png)
     - keepAliveTime: 非核心线程的存在时间
     - workQueue: 承载任务的缓冲队列
         - SynchronousQueue: 类似于Go中默认channel，无法承载元素的队列
@@ -45,6 +45,6 @@
     - shutdownNow: 向所有正在执行的线程发出中断信号，立马终止并返回工作队列中的剩余任务
 
 7. Java线程池类之间的关系:
-    ![classRelation](../second/classRelation.png)
+    ![classRelation](../images/classRelation.png)
     - 常用的Executors是一个工具类
 
