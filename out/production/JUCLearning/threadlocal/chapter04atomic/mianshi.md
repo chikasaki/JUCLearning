@@ -18,3 +18,6 @@ Java原子类:
     - LongAdder内部使用一个`sum`变量和`Cell[]`数组辅助计算，
     当并发度低时，多个线程同时对sum进行操作，
     当并发度高时，每个线程单独维护一个自己的计数器，即Cell[k] (k是哈希之后该线程对应的索引)
+
+4. Accumulator:
+    - 该类可用作并发对无序表达式迭代求值，详见[AccumulatorTest](AccumulatorTest.java)
