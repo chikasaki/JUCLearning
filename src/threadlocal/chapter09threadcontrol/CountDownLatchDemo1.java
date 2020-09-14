@@ -3,6 +3,8 @@ package threadlocal.chapter09threadcontrol;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 五个任务全部完成主线程才能继续执行

@@ -23,3 +23,14 @@
             - 有参数时，归还对应数量的许可证
     - 可指定公平与否，本质是对是否使用公平锁的权衡
     - 一个线程获取许可证之后，可由其他线程归还
+    
+3. `Condition`:
+    - 通过锁来获取
+    - Lock对应于synchronized，而Condition对应于`wait/notify/notifyAll`等一系列方法
+    - 同理与`wait`，当调用`condition`的`await`方法时，会释放锁
+    - `Condition`效率高于`wait/notify`，因为一个锁对象可以获取多个Condition对象
+
+4. `CyclicBarrier`与`CountDownLatch`的比较
+    - `CountDownLatch`针对`countDown()`事件，而`CyclicBarrier`针对线程
+    - `CyclicBarrier`可在满足条件之后，设定要完成的任务
+    - `CyclicBarrier`可重用，而`CountDownLatch`不可重用
