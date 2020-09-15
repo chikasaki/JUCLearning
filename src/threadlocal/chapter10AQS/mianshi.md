@@ -12,6 +12,7 @@ AQS对几种常用工具的源码解读
         - `ReentrantLock`多次重入，当前释放没有释放干净
     
 2. `Condition`:
+
     ![Condition](../images/ConditionAQS.png)
     - `addConditionWaiter`会将当前线程转移到条件队列尾部
     - `fullyRelease`会释放当前线程所有锁(ReentrantLock可重入)，
@@ -27,6 +28,7 @@ AQS对几种常用工具的源码解读
     但是`Condition`在最后还会进行一些收尾操作再放行
 
 3. `CountDownLatch`
+
     ![CountDownLatch](../images/CountDownLatchAQS.png)
     - 整体流程跟ReentrantLock基本一致，不过是独占Node和共享Node调用的方法不同
     - `doAcquireQueuedInterruptibly`成功获取锁之后，会尝试唤醒阻塞队列节点
@@ -59,6 +61,7 @@ AQS对几种常用工具的源码解读
         这时候跳出循环，等待`setHeadAndPropagate`调完`setHead`之后再去调`doReleaseShared`就行了
 
 4. `Semaphore`:
+
     ![Semaphore](../images/SemaphoreAQS.png)
     - 与`CountDownLatch`基本是一样的步骤
     - 与`CountDownLatch`的不同之处:
